@@ -1,0 +1,62 @@
+# This repository adheres to the publiccode.yml standard by including this 
+# metadata file that makes public software easily discoverable.
+# More info at https://github.com/italia/publiccode.yml
+
+publiccodeYmlVersion: '0.2'
+categories:
+  - application-development
+  - it-development
+description:
+  it:
+    features:
+      - batch development
+      - batch scheduling
+      - batch configuration
+      - batch managment
+    genericName: BAtch Task MANagment
+    longDescription: |
+      _BATMAN_ is based on Spring Batch and Spring Boot, is designed to aid
+      batch development, scheduling, release and manage.
+      Thanks to the DIRETTIVE scenarios, you can specify configurations of the
+      jobs on the application.yml file.
+      By "scenario" we mean the overall representation of the actions that that
+      particular job must perform
+      For example, the "BatchOne" scenario has its specific query to perform
+      that is dynamically loaded into the job but, of course, it must still be
+      managed specifically in the code.
+      _BATMAN _exposes several REST services such as for example for the
+      start/stop of all jobs in the context or the CRON scheduling for a single
+      job.
+    shortDescription: BATMAN is designed to aid batch development
+developmentStatus: development
+it:
+  conforme:
+    gdpr: false
+    lineeGuidaDesign: false
+    misureMinimeSicurezza: false
+    modelloInteroperabilita: false
+  countryExtensionVersion: '0.2'
+  piattaforme:
+    anpr: false
+    cie: false
+    pagopa: false
+    spid: false
+legal:
+  license: MIT
+  mainCopyrightOwner: DXC.technology
+  repoOwner: DXC.technology
+localisation:
+  availableLanguages:
+    - en
+  localisationReady: false
+maintenance:
+  contacts:
+    - name: Marco Fioriti
+  type: internal
+name: BATMAN
+platforms:
+  - linux
+releaseDate: '2022-05-11'
+softwareType: standalone/backend
+softwareVersion: 0.0.1
+url: 'https://github.com/DXC-Technology-Italy/batman.git'
