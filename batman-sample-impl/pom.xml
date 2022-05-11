@@ -1,0 +1,71 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	
+	<modelVersion>4.0.0</modelVersion>
+	
+	<parent>
+		<groupId>com.dxc.batman</groupId>
+		<artifactId>batman-parent</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+		<relativePath>../batman-parent</relativePath>
+	</parent>
+	
+	<artifactId>batman-sample-impl</artifactId>
+	<version>0.0.1</version>
+	<packaging>jar</packaging>
+	
+	<name>Batman - BAtch Task MANagment- Sample Impl POM</name>
+	<description>
+	Sample Impl POM for Batman - Batman is a batch manager based on Spring Batch
+	The Sample Impl Project contains three sample scenarios for Batman demo 
+	Use either H2 embedded database or Oracle 11 jdbc connection depends on user configuration 
+	</description>
+	
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<oraclejdbc.version>11.2.0.4</oraclejdbc.version>
+		<batman.core.version>0.0.1</batman.core.version>
+	</properties>
+	
+	<dependencies>
+		<dependency>
+			<groupId>com.dxc.batman</groupId>
+			<artifactId>batman-core</artifactId>
+			<version>${batman.core.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.oracle.database.jdbc</groupId>
+			<artifactId>ojdbc6</artifactId>
+			<version>${oraclejdbc.version}</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+		    <groupId>org.springframework.boot</groupId>
+		    <artifactId>spring-boot-starter-tomcat</artifactId>
+		    <scope>provided</scope>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+				<configuration>
+					<excludes>
+						<!-- This is where the exclusion occurs -->
+						<exclude>*.properties</exclude>
+						<exclude>*.yml</exclude>
+						<exclude>*.xml</exclude>
+					</excludes>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>

@@ -1,0 +1,22 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	
+	<modelVersion>4.0.0</modelVersion>
+	
+	<groupId>com.dxc.batman</groupId>
+	<artifactId>batman-root</artifactId>
+	<version>0.0.1</version>
+	<packaging>pom</packaging>
+	
+	<name>Batman - BAtch Task MANagment- Root POM</name>
+	<description>Root POM for Batman - Batman is a batch manager based on Spring Batch and Spring Boot</description>
+	
+	<modules>
+		<module>./batman-parent</module>
+		<module>./batman-core</module>
+		<module>./batman-sample-impl</module>
+		<module>./batman-sample-war</module>
+	</modules>
+	
+</project>

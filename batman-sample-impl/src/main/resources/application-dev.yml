@@ -1,0 +1,60 @@
+################## Development Profile - sviluppo DXC
+---
+spring:
+  batch:
+# Schema BATCH schema created off-line
+    initialize-schema: never
+    initializer:
+      enabled: false
+    job:
+# Job does not start automatically but only if scheduled
+      enabled: false
+  main:
+    allow-bean-definition-overriding: true
+
+# TaskExecutor
+# Configuration of Thread Pool
+threadPoolTaskExecutor:
+  corePoolSize: 15
+  maxPoolSize: 20
+  queueCapacity: 30
+
+# Datasource (batch datasource, application datasource, etc)
+# Multiple datasource can be specified
+datasource:
+# batch datasource (where the instances-parameters-executions of jobs are stored)
+# it's the primary datasource primario and it must never be missing
+  batch:
+    #attention embedded is a boolean
+    embedded: true
+
+# application datasource (dove ci sono i dati da processare)
+  app:
+    #attention embedded is a boolean
+    embedded: true
+    #attention jdbc is a boolean
+
+# Configuration of DIRETTIVE scenari (DIRECTIVES scenarios)
+# In the directives there are the specific configurations of the jobs
+# By scenario we mean the overall representation of the actions that that particular job must perform
+# For example, the BatchComponentTwo scenario has its own CRON schedule and executes
+# a specific query that is dynamically loaded into the job but it must still be managed 
+# specifically in the code.
+# Please refer the BatchComponentTwoImpl and CustomComponentTwoReaderTask classes 
+direttiveconfig:
+  nota: versione POC 0.1
+  scenari:
+    - nomescenario: BatchComponentOne
+      codicescenario: BatchComponentOne
+
+    - nomescenario: BatchComponentTwo
+      codicescenario: BatchComponentTwo
+      queries: 
+        - nome: TEST_QUERY
+          query: SELECT JOB_INSTANCE_ID, VERSION, JOB_NAME, JOB_KEY FROM BATCH_JOB_INSTANCE
+
+    - nomescenario: BatchComponentThree
+      codicescenario: BatchComponentThree
+      queries: 
+        - nome: TEST_QUERY
+          query: SELECT JOB_INSTANCE_ID, VERSION, JOB_NAME, JOB_KEY FROM BATCH_JOB_INSTANCE

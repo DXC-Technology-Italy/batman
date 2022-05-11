@@ -1,0 +1,79 @@
+<project 
+	xmlns="http://maven.apache.org/POM/4.0.0" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
+	http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	
+	<modelVersion>4.0.0</modelVersion>
+	
+	<parent>
+		<groupId>com.dxc.batman</groupId>
+		<artifactId>batman-parent</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+		<relativePath>../batman-parent</relativePath>
+	</parent>
+	
+	<artifactId>batman-sample-war</artifactId>
+	<version>0.0.1</version>
+	<packaging>war</packaging>
+	
+	<name>Batman - BAtch Task MANagment- Sample WAR POM</name>
+	<description>
+	Sample WAR POM for Batman - Batman is a batch manager based on Spring Batch
+	The WAR Project is a ready-to-deploy war package
+	Contain the Sample Impl jar for a demo 
+	</description>
+	
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<batman.sampleimp.version>0.0.1-SNAPSHOT</batman.sampleimp.version>
+		<maven.war.plugin.version>3.3.1</maven.war.plugin.version>
+	</properties>
+	
+	<dependencies>
+		<dependency>
+			<groupId>com.dxc.batman</groupId>
+			<artifactId>batman-sample-impl</artifactId>
+			<version>${batman.sampleimp.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+			<exclusions>
+				<exclusion>
+					<groupId>org.springframework.boot</groupId>
+					<artifactId>spring-boot-starter-logging</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>org.springframework.boot</groupId>
+					<artifactId>spring-boot-starter-tomcat</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-tomcat</artifactId>
+			<scope>provided</scope>
+		</dependency>
+	</dependencies>
+	
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+			<plugin>
+			    <groupId>org.apache.maven.plugins</groupId>
+			    <artifactId>maven-war-plugin</artifactId>
+			    <version>${maven.war.plugin.version}</version>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>

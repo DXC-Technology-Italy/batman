@@ -1,0 +1,30 @@
+<configuration>
+	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
+			<pattern>%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n</pattern>
+		</encoder>
+	</appender>
+	<appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>${logs.path}/dev_app.log</file>
+		<encoder>
+			<pattern>%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n</pattern>
+		</encoder>
+		<rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+			<fileNamePattern>${logs.path}/dev_app-%d{yyyy-MM-dd}.%i.log</fileNamePattern>
+			<maxFileSize>10MB</maxFileSize>
+		</rollingPolicy>
+	</appender>
+	
+	
+	<logger name="org.apache.catalina" level="ERROR" /> 
+	<logger name="org.apache.coyote" level="ERROR" />
+	<logger name="org.apache.tomcat" level="ERROR" />
+	<logger name="org.springframework" level="ERROR" />
+	<logger name="org.hibernate" level="ERROR" />
+    <logger name="com.dxc.batman" level="DEBUG" />
+	
+	<root level="INFO">
+		<appender-ref ref="STDOUT"/>
+		<appender-ref ref="FILE"/>
+	</root>
+</configuration>
