@@ -16,6 +16,9 @@ You need only these projects for start your journey with BATMAN:
 - [ ] batman-sample-impl
 - [ ] batman-sample-war
 
+# Containerization
+We included a Dockerfile and docker-compose.yml to facilitate the understanding and deployment of BATMAN. We use a Tomcat Docker official image
+
 ## batman-parent
 Little things to say, this project contains the POM's dependencies and plugins for the maven stuff.
 
@@ -47,11 +50,14 @@ You can now deploy the batman-sample-war.war in the new server and activate it. 
 
 *Remember to deploy application-profile.yml and logback.xml in the specified path before the server start*
 
+If you use our Dockerfile please refer to the batman-sample-war project resource files
+
 ### REST services
-The REST services are exposed on */batman/* root.
 Below a sample call for one-shot-run *BatchComponentThree* job:
 
-	http://localhost:7011/batman/runJob?jobName=BatchComponentThree
+	http://localhost:8080/batman/runJob?jobName=BatchComponentThree
+
+If you use our Dockerfile The REST services are exposed on */batman/* root
 
 # Roadmap
 
@@ -62,4 +68,4 @@ Below a sample call for one-shot-run *BatchComponentThree* job:
 
 # Version
 
- - 0.0.1-SNAPSHOT
+ - 0.0.2

@@ -3,9 +3,13 @@
 # More info at https://github.com/italia/publiccode.yml
 
 publiccodeYmlVersion: '0.2'
-categories:
-  - application-development
-  - it-development
+name: BATMAN
+logo: DXC_batman_logo.png
+developmentStatus: development
+releaseDate: '2022-05-11'
+softwareType: standalone/backend
+softwareVersion: 0.0.2
+url: 'https://github.com/DXC-Technology-Italy/batman.git'
 description:
   it:
     features:
@@ -24,11 +28,13 @@ description:
       For example, the "BatchOne" scenario has its specific query to perform
       that is dynamically loaded into the job but, of course, it must still be
       managed specifically in the code.
-      _BATMAN _exposes several REST services such as for example for the
+      _BATMAN_ exposes several REST services such as for example for the
       start/stop of all jobs in the context or the CRON scheduling for a single
       job.
     shortDescription: BATMAN is designed to aid batch development
-developmentStatus: development
+categories:
+  - application-development
+  - it-development
 it:
   conforme:
     gdpr: false
@@ -51,12 +57,8 @@ localisation:
   localisationReady: false
 maintenance:
   contacts:
-    - name: Marco Fioriti
+    - email: marco.fioriti@dxc.com
+      name: Marco Fioriti
   type: internal
-name: BATMAN
 platforms:
   - linux
-releaseDate: '2022-05-11'
-softwareType: standalone/backend
-softwareVersion: 0.0.1
-url: 'https://github.com/DXC-Technology-Italy/batman.git'

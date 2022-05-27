@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  batman:
+    build: .
+    image: batman
+    ports:
+      - 8080:8080
+    environment:
+      - "SPRING_PROFILES_ACTIVE=dev"
+      - "SPRING_CONFIG_LOCATION=/var/batman/config/"
+      - "LOGS_PATH=/var/batman/log/"
+      - "LOGGING_CONFIG=/var/batman/config/logback.xml"

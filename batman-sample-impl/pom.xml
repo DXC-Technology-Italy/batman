@@ -7,12 +7,12 @@
 	<parent>
 		<groupId>com.dxc.batman</groupId>
 		<artifactId>batman-parent</artifactId>
-		<version>0.0.1-SNAPSHOT</version>
+		<version>0.0.2</version>
 		<relativePath>../batman-parent</relativePath>
 	</parent>
 	
 	<artifactId>batman-sample-impl</artifactId>
-	<version>0.0.1</version>
+	<version>0.0.2</version>
 	<packaging>jar</packaging>
 	
 	<name>Batman - BAtch Task MANagment- Sample Impl POM</name>
@@ -25,7 +25,7 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<oraclejdbc.version>11.2.0.4</oraclejdbc.version>
-		<batman.core.version>0.0.1</batman.core.version>
+		<batman.core.version>0.0.2</batman.core.version>
 	</properties>
 	
 	<dependencies>

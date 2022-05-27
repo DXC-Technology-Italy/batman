@@ -9,12 +9,12 @@
 	<parent>
 		<groupId>com.dxc.batman</groupId>
 		<artifactId>batman-parent</artifactId>
-		<version>0.0.1-SNAPSHOT</version>
+		<version>0.0.2</version>
 		<relativePath>../batman-parent</relativePath>
 	</parent>
 	
 	<artifactId>batman-sample-war</artifactId>
-	<version>0.0.1</version>
+	<version>0.0.2</version>
 	<packaging>war</packaging>
 	
 	<name>Batman - BAtch Task MANagment- Sample WAR POM</name>
@@ -26,7 +26,7 @@
 	
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<batman.sampleimp.version>0.0.1-SNAPSHOT</batman.sampleimp.version>
+		<batman.sampleimp.version>0.0.2</batman.sampleimp.version>
 		<maven.war.plugin.version>3.3.1</maven.war.plugin.version>
 	</properties>
 	
